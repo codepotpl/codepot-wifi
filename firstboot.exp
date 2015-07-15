@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+spawn "./connect.sh"
+set timeout 60
+
+sleep 1
+
+send "\r"
+
+sleep 1
+
+expect "root@(none):/#"
+
+send "firstboot\r"
+
+expect "Erasing rootfs_data ..."
+sleep 30
+
+send "\r"
+sleep 2
+
+expect "root@(none):/#"
