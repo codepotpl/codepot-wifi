@@ -13,5 +13,5 @@ fi
 
 for i in $APs
 do
-	ping -W 0 -c 2 10.230.0.$i >/dev/null && echo "ap-$i is up" || echo "ap-$i is down!"
+	ping -W 0 -c 2 192.168.1.$i >/dev/null && echo "ap-$i is up" || echo "ap-$i is down!"
 done
