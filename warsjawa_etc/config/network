@@ -1,0 +1,29 @@
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option type 'bridge'
+	option _orig_ifname 'eth0.1 radio0.network1 radio1.network1'
+	option _orig_bridge 'true'
+	option ifname 'eth0.1'
+	option proto 'static'
+	option auto '1'
+	option ipaddr '10.8.1.6'
+	option netmask '255.255.240.0'
+	option gateway '10.8.0.1'
+	option dns '10.0.0.2 10.1.0.2'
+	option stp '1'
+
+config switch
+	option name 'eth0'
+	option reset '1'
+	option enable_vlan '1'
+
+config switch_vlan
+	option device 'eth0'
+	option vlan '1'
+	option ports '0t 1 2 3 4 5'
+	option vid '1'
