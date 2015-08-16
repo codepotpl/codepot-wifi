@@ -3,6 +3,6 @@
 
 cat <<CONFIG
 
-opkg update && opkg install ebtables luci-ssl bash curl || exit 1
+opkg update && opkg install htop ebtables luci-ssl bash curl || exit 1
 
 CONFIG
