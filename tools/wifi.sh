@@ -1,8 +1,8 @@
 #!/usr/bin/env bash -ex
 
 AP=$1
-SSID="Codepot"
-SSID_ALTERNATIVE="$SSID Alternative"
+SSID50="Codepot"
+SSID24="$SSID50 Alternative"
 PASSWORD="codepot2015"
 
 declare -A CH24
@@ -73,7 +73,7 @@ uci set wireless.@wifi-iface[0].device=radio0;
 uci set wireless.@wifi-iface[0].network=lan;
 uci set wireless.@wifi-iface[0].mode=ap;
 uci set wireless.@wifi-iface[0].encryption=psk2+ccmp;
-uci set wireless.@wifi-iface[0].ssid="$SSID";
+uci set wireless.@wifi-iface[0].ssid="$SSID24";
 uci set wireless.@wifi-iface[0].key=$PASSWORD;
 uci set wireless.@wifi-iface[0].isolate=1;
 uci commit wireless;
@@ -90,7 +90,7 @@ uci set wireless.@wifi-iface[1].device=radio1;
 uci set wireless.@wifi-iface[1].network=lan;
 uci set wireless.@wifi-iface[1].mode=ap;
 uci set wireless.@wifi-iface[1].encryption=psk2+ccmp;
-uci set wireless.@wifi-iface[1].ssid="$SSID_ALTERNATIVE";
+uci set wireless.@wifi-iface[1].ssid="$SSID50";
 uci set wireless.@wifi-iface[1].key=$PASSWORD;
 uci set wireless.@wifi-iface[1].isolate=1;
 uci commit wireless;
