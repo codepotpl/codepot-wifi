@@ -7,11 +7,12 @@ then
 	exit 1
 fi
 
-#bash tools/install.sh $1 | ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.1.1 "cd / && sh"
-bash tools/users.sh $1 | ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.1.1 "cd / && sh"
-bash tools/system.sh $1 | ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.1.1 "cd / && sh"
+AP=$1
+IP="192.168.1.1"
+#IP="10.5.11.$AP"
 
+bash tools/main.sh $AP | ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@$IP "cd / && sh"
 
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@192.168.1.1 "reboot"
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@$IP "reboot"
 
 set +ex
