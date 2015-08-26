@@ -21,13 +21,12 @@ config dnsmasq
 	option readethers '1'
 	option leasefile '/tmp/dhcp.leases'
 	option resolvfile '/tmp/resolv.conf.auto'
-	option domain 'codepot.pl'
 
 config dhcp 'lan'
 	option interface 'lan'
 	option start '244'
 	option limit '1500'
-	option leasetime '60m'
+	option leasetime '10m'
 
 config dhcp 'wan'
 	option interface 'wan'
