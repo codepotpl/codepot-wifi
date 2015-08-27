@@ -1,9 +1,9 @@
 #!/usr/bin/env bash -ex
 AP=$1
 
-IP="10.5.11.$AP"
-NETMASK=255.255.0.0
-GATEWAY=10.5.10.1
+IP="192.168.24.$((AP+1))"
+NETMASK=255.255.255.0
+GATEWAY=192.168.24.1
 
 cat <<CONFIG
 
@@ -26,7 +26,7 @@ config dhcp 'lan'
 	option interface 'lan'
 	option start '244'
 	option limit '1500'
-	option leasetime '10m'
+	option leasetime '1m'
 
 config dhcp 'wan'
 	option interface 'wan'
