@@ -8,7 +8,7 @@ then
 fi
 
 AP=$1
-IP="192.168.1.1"
+IP="192.168.24.$((AP+1))"
 #sudo ifconfig wlan0 10.5.10.40 netmask 255.255.255.0
 bash tools/main.sh $AP | ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@$IP "cd / && sh"
 

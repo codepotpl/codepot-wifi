@@ -47,7 +47,7 @@ config interface 'lan'
 	option proto 'static'
 	option ipaddr '192.168.1.1'
 	option netmask '255.255.0.0'
-	option dns '62.233.233.233 8.8.8.8 8.8.4.4'
+	option dns '8.8.8.8 8.8.4.4'
 
 config interface 'wan'
 	option ifname 'eth0.2'

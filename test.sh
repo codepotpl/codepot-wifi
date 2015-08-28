@@ -9,6 +9,6 @@ fi
 
 for i in $APs
 do
-	ping -W 1 -c 1 192.168.1.$i >/dev/null && echo "codepot-ap-$i is up" || echo "codepot-ap-$i is down!"
+	ping -W 1 -c 1 192.168.24.$((i+1)) >/dev/null && echo "codepot-ap-$i is up" || echo "codepot-ap-$i is down!"
 done
 

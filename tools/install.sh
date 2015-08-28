@@ -2,7 +2,13 @@
 
 
 cat <<CONFIG
+sed -i 's/127.0.0.1/8.8.8.8/g' /etc/resolv.conf
 
-opkg update && opkg install htop ebtables luci-ssl bash curl || exit 1
+opkg update
+
+opkg install ebtables
+#opkg install luci-ssl
+
+
 
 CONFIG

@@ -1,0 +1,1 @@
+* * * * * bash /root/metrics.sh &> /dev/null
